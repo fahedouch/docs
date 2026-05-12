@@ -264,3 +264,21 @@ Apply the {{< hover label="provider" line="2" >}}Provider{{< /hover >}} resource
 
 {{< manifest path="code-style-guide/provider.yaml" label="provider" >}}
 
+### Interact with manifests
+
+Use the `manifest-url` shortcode to interact with manifests applied to the cluster.
+
+```shell
+kubectl <command> -f {{</* manifest-url path="code-style-guide/provider.yaml" */>}}
+```
+You can use `get`, `describe`, `edit`, `delete` and other supported commands to perform the action on the live resource matching the manifest:
+
+```shell
+kubectl <command> -f {{< manifest-url path="code-style-guide/provider.yaml" >}}
+```
+
+{{< hint "note" >}}
+Refer to the
+[`kubectl`](https://kubernetes.io/docs/reference/kubectl/generated/) command
+reference for more information for supported commands and flags.
+{{< /hint >}}
