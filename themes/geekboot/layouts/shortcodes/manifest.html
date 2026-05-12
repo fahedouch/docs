@@ -42,7 +42,7 @@
 {{- $url := printf "%s/manifests/%s" $version $rel | absURL -}}
 {{- $applyCmd := printf "%s %s" $command $url -}}
 
-{{- $highlightOpts := "linenos=table,linenostart=1" -}}
+{{- $highlightOpts := "linenos=inline,linenostart=1" -}}
 
 <div class="gdoc-manifest">
   {{- if $label -}}
